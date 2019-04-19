@@ -1,0 +1,13 @@
+<h1> show all produts</h1>
+
+
+<% @products.each do |product| %>
+<div class="well">
+Product Name:- <%= product.name %><br><br>
+
+Product Price:- <%= product.price %>
+<%= link_to 'edit',  edit_product_path(product) %>
+<%= link_to 'Delete', product_path(product), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+<% end %>
+
